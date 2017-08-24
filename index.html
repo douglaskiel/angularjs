@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <head>
+      <title>Intro to AngularJS</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta charset="UTF-8">
+
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+      <style>
+        html, body
+        {
+            font-size: 1.1em;
+        }
+      </style>
+        
+
+    </head>
+    <body>
+
+      <header>
+  			<nav class="navbar navbar-default">
+    			<div class="container">
+    				<div class="navbar-header">
+    					<a class="navbar-brand" href="/">AngularJS</a>
+    				</div>
+    				<ul class="nav navbar-right">
+    					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    				</ul>
+      		</div>
+  			</nav>
+  		</header>
+
+      <div class="container">
+  			<div ng-controller="mainController">
+    <!-- Lec.2 Sec. 9 Min. 8:25 This is the area where you get to view what is happening in the controller 
+    on the app.js/index.js page. -->
+    <!-- Lec.2 Sec. 9 Min. 8:33 - This controller is also a kind of binding within itself in angular 
+    besides the actual command ng-bind. -->
+          <form name="myForm">
+            <label>
+              Enter your name:
+              <input type="text"
+                     name="myName"
+                     ng-model="name"
+                     ng-minlength="5"
+                     ng-maxlength="20"
+                     required />
+            </label>
+            <!-- <pre>myForm.myName.$error = {{ myForm.myName.$error | json }}</pre> -->
+
+            <div ng-messages="myForm.myName.$error" style="color: #d9bfcd;" role="alert">
+              <div ng-message="required">You did not enter a field</div>
+              <div ng-message="minlength">Your field is too short</div>
+              <div ng-message="maxlength">Your field is too long</div>
+            </div>
+          </form>
+                
+        </div>
+		  </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- load angular via CDN -->
+      <script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+      <!-- Lec.3 Sec.14 3b. By going to the Angular.js site and finding the downloads section you can 
+      get any dependency you want by pasting it into this lower part of scripts. -->
+      <script src="https://code.angularjs.org/1.6.4/angular-messages.min.js"></script>
+      <script src="https://code.angularjs.org/1.6.4/angular-resource.min.js"></script>
+      <!-- <script src="example-app.js"></script> -->
+      <script src="app.js"></script>
+    </body>
+</html>

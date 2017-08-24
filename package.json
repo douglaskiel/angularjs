@@ -1,0 +1,14 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "DouglasKiel",
+  "license": "ISC",
+  "dependencies": {
+    "angular-messages": "^1.6.4"
+  }
+}
